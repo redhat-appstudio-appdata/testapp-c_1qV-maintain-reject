@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: acs-fleet-manager-rali
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: acs-fleet-manager-rali
+    app.kubernetes.io/part-of: testapp
+  name: acs-fleet-manager-rali
+  namespace: dfodor-tenant
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: acs-fleet-manager-rali
+status:
+  loadBalancer: {}
